@@ -44,10 +44,12 @@ header {
     ul {
       @include app.flex(row, space-between);
       width: 120px;
+
       li {
         a {
           text-decoration: none;
           color: white;
+          
           i {
             font-size: 2.5rem;
             transition: .3s;

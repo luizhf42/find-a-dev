@@ -5,10 +5,10 @@
   align-items: $align;
 }
 
-$bg: #0d1117;
+$main-bg: #0d1117;
 $header-bg: #161b22;
 $title: #1f6feb;
-$border: #30363d;
+$border: 1px solid #30363d;
 $cta: #2585f5;
 $form-bg: #161b22;
 $text: #c9d1d9;
@@ -19,6 +19,7 @@ $input-placeholder: #bac3c5;
 $no-info-text: #373b42;
 $input-error: #8f0000;
 $input-focus: #1f6feb;
+$input-focus-placeholder: #6e7681;
 
 $main-font: "Helvetica", sans-serif;
 $username-font: "Arial", sans-serif;
@@ -33,6 +34,11 @@ $title-font: "Space Mono", monospace;
 }
 
 #app {
-  background: $bg;
+  background: $main-bg;
   min-height: 100vh;
+
+  main {
+    padding: 20px;
+    height: calc(100vh - 65px);
+  }
 }
