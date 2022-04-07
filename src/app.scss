@@ -5,13 +5,34 @@
   align-items: $align;
 }
 
+$bg: #0d1117;
+$header-bg: #161b22;
+$title: #1f6feb;
+$border: #30363d;
+$cta: #2585f5;
+$form-bg: #161b22;
+$text: #c9d1d9;
+$username: #5a6169;
+$header: #f0f6fc;
+$btn-text: #f0f6fc;
+$input-placeholder: #bac3c5;
+$no-info-text: #373b42;
+$input-error: #8f0000;
+$input-focus: #1f6feb;
+
+$main-font: "Helvetica", sans-serif;
+$username-font: "Arial", sans-serif;
+$title-font: "Space Mono", monospace;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: inherit;
+  font-family: $main-font;
+  list-style-type: none;
 }
 
 #app {
+  background: $bg;
   min-height: 100vh;
 }
