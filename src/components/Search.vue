@@ -5,19 +5,26 @@
       <img :src="searchIcon" alt="" />
     </button>
   </form>
+  <p v-show="searchErrorOccurred">{{ errorMessage }}</p>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, Ref } from "vue";
 import searchIcon from "../assets/search-icon.svg";
 import axios from "../services/axios";
+import { animateOnError } from "../utils/animateOnError";
+
+type errorMessage = "An error occurred!" | "Type the user!";
 
 export let userData: Object;
+export let userReposData: Object;
 
 export default defineComponent({
   setup() {
     const inputText = ref("");
     const githubUsernameRegex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
+    const searchErrorOccurred = ref(false);
+    const errorMessage: Ref<errorMessage> = ref("An error occurred!");
 
     const makeRequest = async () => {
       inputText.value = inputText.value.trim();
@@ -25,17 +32,28 @@ export default defineComponent({
       if (inputText.value.match(githubUsernameRegex)) {
         try {
           userData = await axios.get(inputText.value);
+          userReposData = await axios.get(`${inputText.value}/repos`);
           console.log(userData);
+          searchErrorOccurred.value = false;
         } catch (error) {
           console.error(error);
+          animateOnError();
+          errorMessage.value = "An error occurred!";
+          searchErrorOccurred.value = true;
         }
-      } else console.error("ESCREVE CERTO PORRA");
+      } else {
+        animateOnError();
+        errorMessage.value = "Type the user!";
+        searchErrorOccurred.value = true;
+      }
     };
 
     return {
       makeRequest,
       searchIcon,
       inputText,
+      searchErrorOccurred,
+      errorMessage,
     };
   },
 });
@@ -83,5 +101,12 @@ form {
       height: 65%;
     }
   }
+}
+
+p {
+  color: app.$error;
+  text-align: center;
+  margin: 10px;
+  font-size: 1.1rem;
 }
 </style>
