@@ -1,21 +1,44 @@
 <template>
   <Header />
   <main>
-    <Search />
+    <Search @request="handleNewData" />
+    <div class="infos">
+      <UserInfo :userData="data" :userReposData="reposData" />
+    </div>
   </main>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import "./app.scss";
 import Header from "./components/Header.vue";
 import Search from "./components/Search.vue";
+import UserInfo from "./components/UserInfo.vue";
 
 export default defineComponent({
-  setup() {},
+  setup() {
+    const data = ref();
+    const reposData = ref([] as any);
+
+    const handleNewData = ({
+      userData,
+      userReposData,
+    }: {
+      userData: Object;
+      userReposData: Object[];
+    }) => {
+      data.value = userData;
+      reposData.value = userReposData;
+      console.log(data.value);
+      console.log(reposData.value);
+    };
+
+    return { handleNewData, data, reposData };
+  },
   components: {
     Header,
     Search,
+    UserInfo,
   },
 });
 </script>
