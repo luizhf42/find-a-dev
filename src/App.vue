@@ -29,8 +29,6 @@ export default defineComponent({
     }) => {
       data.value = userData;
       reposData.value = userReposData;
-      console.log(data.value);
-      console.log(reposData.value);
     };
 
     return { handleNewData, data, reposData };

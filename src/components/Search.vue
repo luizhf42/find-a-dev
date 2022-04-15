@@ -25,19 +25,20 @@ export default defineComponent({
     const searchErrorOccurred = ref(false);
     const errorMessage: Ref<errorMessage> = ref("An error occurred!");
 
-    // onBeforeMount(async () => {
-    //   try {
-    //     userData.value = await axios.get("luizhf42");
-    //     userReposData.value = await axios.get("luizhf42/repos");
-    //     emit("request", {
-    //       userData: userData.value,
-    //       userReposData: userReposData.value,
-    //     });
-    //     console.log(userData);
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // });
+    onMounted(async () => {
+      try {
+        const dataResponse = await axios.get("luizhf42");
+        userData.value = dataResponse.data;
+        const reposResponse = await axios.get("luizhf42/repos");
+        userReposData.value = reposResponse.data;
+        emit("request", {
+          userData: userData.value,
+          userReposData: userReposData.value,
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    });
 
     const makeRequest = async () => {
       inputText.value = inputText.value.trim();
@@ -54,6 +55,7 @@ export default defineComponent({
             userReposData: userReposData.value,
           });
           searchErrorOccurred.value = false;
+          inputText.value = "";
         } catch (error) {
           console.error(error);
           animateOnError();

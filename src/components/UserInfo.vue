@@ -1,5 +1,5 @@
 <template>
-  <section v-if="userData">
+  <section v-if="userData" class="info-section">
     <ProfileInfo :userData="userData" />
   </section>
 </template>
