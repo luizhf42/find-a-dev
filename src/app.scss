@@ -37,7 +37,6 @@ $title-font: "Space Mono", monospace;
   background: $main-bg;
   min-height: 100vh;
   color: $text;
-
   main {
     padding: 20px;
     height: calc(100vh - 65px);
@@ -59,6 +58,15 @@ $title-font: "Space Mono", monospace;
 
       a:hover {
         text-decoration: underline;
+      }
+
+      .no-info {
+        color: $no-info-text;
+
+        &:hover {
+          text-decoration: none;
+          cursor: default;
+        }
       }
     }
   }

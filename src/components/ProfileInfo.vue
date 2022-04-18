@@ -3,9 +3,12 @@
     <img :src="userData.avatar_url" alt="User Profile Pic" />
     <div class="names">
       <h2>
-        <a :href="userData.html_url" target="_blank" rel="noopener noreferrer">{{
-          userData.name
-        }}</a>
+        <a
+          :href="userData.html_url"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ userData.name }}</a
+        >
       </h2>
       <h3>{{ userData.login }}</h3>
     </div>
@@ -13,7 +16,7 @@
 
   <div class="bio">
     <h2>Bio</h2>
-    <p>{{ userData.bio }}</p>
+    <p :class="{ 'no-info': !userData.bio }">{{ userData.bio || "No bio" }}</p>
   </div>
 </template>
 
@@ -66,7 +69,7 @@ export default defineComponent({
 
   p {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 </style>
