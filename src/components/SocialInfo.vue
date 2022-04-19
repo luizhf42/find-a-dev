@@ -65,7 +65,7 @@ export default defineComponent({
 
 .social-info {
   @include app.flex(row, start);
-  gap: 8px;
+  gap: 7px;
   height: 20px;
   margin: 1.5rem 0;
 
@@ -74,7 +74,7 @@ export default defineComponent({
   }
 
   img {
-    height: 90%;
+    height: 80%;
   }
 }
 

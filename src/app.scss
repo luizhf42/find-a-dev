@@ -62,6 +62,7 @@ $title-font: "Space Mono", monospace;
 
       .no-info {
         color: $no-info-text;
+        user-select: none;
 
         &:hover {
           text-decoration: none;
