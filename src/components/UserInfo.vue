@@ -1,7 +1,10 @@
 <template>
   <section v-if="userData" class="info-section">
     <ProfileInfo :userData="userData" />
-    <SocialInfo :userData="userData" :website="{href: userData.blog || '#'}" />
+    <SocialInfo
+      :userData="userData"
+      :website="{ href: userData.blog || '#' }"
+    />
   </section>
 </template>
 

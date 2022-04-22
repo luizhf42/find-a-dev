@@ -24,7 +24,7 @@
     </p>
     <p>
       <img :src="link" alt="" />
-      <a :href="website.href" target="_blank" :class="{ 'no-info': !userData.blog }">{{
+      <a :href="website.href" :class="{ 'no-info': !userData.blog }">{{
         userData.blog || "No info"
       }}</a>
     </p>
@@ -32,13 +32,7 @@
 </template>
 
 <script lang="ts">
-import {
-  computed,
-  ComputedRef,
-  defineComponent,
-  WritableComputedRef,
-  ref,
-} from "vue";
+import { defineComponent } from "vue";
 import company from "../assets/company-icon.svg";
 import location from "../assets/location-dot.svg";
 import twitter from "../assets/twitter-icon.svg";
@@ -46,11 +40,10 @@ import link from "../assets/link-icon.svg";
 import userGroup from "../assets/user-group.svg";
 
 export default defineComponent({
-  setup({ userData }) {
+  setup() {
     const formatter = new Intl.NumberFormat();
 
     return {
-      // href,
       formatter,
       company,
       location,
