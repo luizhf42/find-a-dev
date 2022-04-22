@@ -84,7 +84,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @use "../app.scss";
 form {
-  width: min(95%, 600px);
+  width: min(100%, 600px);
   margin: auto;
   @include app.flex(row);
 

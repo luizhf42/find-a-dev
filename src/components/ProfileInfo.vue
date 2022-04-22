@@ -72,4 +72,18 @@ export default defineComponent({
     margin-bottom: 1rem;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .profile-info {
+    @include app.flex(column, start, start);
+
+    img {
+      width: 45%;
+    }
+
+    .names {
+      padding-left: 0;
+    }
+  }
+}
 </style>

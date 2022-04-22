@@ -1,0 +1,9 @@
+@use "./app.scss";
+
+@media screen and (max-width: 500px) {
+  header {
+    // @include app.flex(row, space-between);
+    flex-direction: column;
+    height: 130px;
+  }
+}

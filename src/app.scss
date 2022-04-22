@@ -33,6 +33,7 @@ $title-font: "Space Mono", monospace;
   list-style-type: none;
 }
 
+body,
 #app {
   background: $main-bg;
   min-height: 100vh;
@@ -41,33 +42,52 @@ $title-font: "Space Mono", monospace;
     padding: 20px;
     height: calc(100vh - 65px);
 
-    .info-section {
-      padding: 1rem;
-      margin: 30px auto;
-      width: 95%;
-      max-width: 600px;
-      border-radius: 15px;
-      border: $border;
-      position: relative;
+    .infos {
+      height: calc(100% - 35px);
+      @include flex(row, space-around);
+      .info-section {
+        padding: 1rem;
+        margin: 30px auto;
+        width: 95%;
+        max-width: 600px;
+        border-radius: 15px;
+        border: $border;
 
-      a {
-        color: $cta;
-        text-decoration: none;
-        font-size: inherit;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .no-info {
-        color: $no-info-text;
-        user-select: none;
-
-        &:hover {
+        a {
+          color: $cta;
           text-decoration: none;
-          cursor: default;
+          font-size: inherit;
         }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
+        .no-info {
+          color: $no-info-text;
+          user-select: none;
+
+          &:hover {
+            text-decoration: none;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  #app {
+    main {
+      .infos {
+        height: auto;
       }
     }
   }

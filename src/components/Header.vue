@@ -49,10 +49,10 @@ header {
         a {
           text-decoration: none;
           color: white;
-          
+
           i {
             font-size: 2.5rem;
-            transition: .3s;
+            transition: 0.3s;
 
             &:hover {
               font-size: 2.7rem;
@@ -61,6 +61,14 @@ header {
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    @include app.flex(column, space-around);
+    height: 130px;
+    padding: 0;
   }
 }
 </style>

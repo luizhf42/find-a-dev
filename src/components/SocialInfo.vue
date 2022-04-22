@@ -24,7 +24,7 @@
     </p>
     <p>
       <img :src="link" alt="" />
-      <a :href="website.href" :class="{ 'no-info': !userData.blog }">{{
+      <a :href="website.href" target="_blank" :class="{ 'no-info': !userData.blog }">{{
         userData.blog || "No info"
       }}</a>
     </p>
@@ -109,6 +109,14 @@ export default defineComponent({
     height: 100%;
     width: 16px;
     margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .personal-info {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 8px;
   }
 }
 </style>
