@@ -9,10 +9,11 @@ $main-bg: #0d1117;
 $header-bg: #161b22;
 $title: #1f6feb;
 $border: 1px solid #30363d;
-$cta: #2585f5;
+$cta: #58a6ff;
 $form-bg: #161b22;
 $text: #c9d1d9;
-$username: #5a6169;
+$username: #8b949e;
+$repo-color: #8b949e;
 $header: #f0f6fc;
 $btn-text: #f0f6fc;
 $input-placeholder: #bac3c5;
@@ -48,8 +49,8 @@ body,
       .info-section {
         padding: 1rem;
         margin: 30px auto;
-        width: 95%;
-        max-width: 600px;
+        width: min(95%, 600px);
+        max-height: 80%;
         border-radius: 15px;
         border: $border;
 
@@ -66,10 +67,10 @@ body,
         .no-info {
           color: $no-info-text;
           user-select: none;
+          cursor: default;
 
           &:hover {
             text-decoration: none;
-            cursor: default;
           }
         }
       }

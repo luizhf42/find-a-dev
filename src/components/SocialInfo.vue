@@ -74,6 +74,7 @@ export default defineComponent({
 
   img {
     height: 80%;
+    aspect-ratio: 1/1;
   }
 }
 

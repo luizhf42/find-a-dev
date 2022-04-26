@@ -2,8 +2,9 @@
   <Header />
   <main>
     <Search @request="handleNewData" />
-    <div class="infos">
-      <UserInfo :userData="data" :userReposData="reposData" />
+    <div class="infos" v-if="data && reposData">
+      <UserInfo :userData="data" />
+      <ReposInfo :userReposData="reposData" />
     </div>
   </main>
 </template>
@@ -14,6 +15,7 @@ import "./app.scss";
 import Header from "./components/Header.vue";
 import Search from "./components/Search.vue";
 import UserInfo from "./components/UserInfo.vue";
+import ReposInfo from "./components/ReposInfo.vue";
 
 export default defineComponent({
   setup() {
@@ -37,6 +39,7 @@ export default defineComponent({
     Header,
     Search,
     UserInfo,
+    ReposInfo,
   },
 });
 </script>

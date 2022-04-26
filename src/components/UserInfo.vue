@@ -18,7 +18,6 @@ export default defineComponent({
   components: { ProfileInfo, SocialInfo },
   props: {
     userData: Object,
-    userReposData: Object,
   },
 });
 </script>
