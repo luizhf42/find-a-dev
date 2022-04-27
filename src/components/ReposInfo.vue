@@ -1,12 +1,8 @@
 <template>
-  <section class="info-section repos-section" v-if="userReposData">
+  <section class="repos-section" v-if="userReposData">
     <h2>Public Repos ({{ userReposData.length }})</h2>
     <ul>
-      <Repo
-        v-for="repo in userReposData"
-        :key="repo.id"
-        :repo="repo"
-      />
+      <Repo v-for="repo in userReposData" :key="repo.id" :repo="repo" />
     </ul>
   </section>
 </template>
@@ -27,7 +23,11 @@ export default defineComponent({
 <style lang="scss" scoped>
 @use "../app.scss";
 .repos-section {
-  overflow: auto;
+  @extend .info-section;
+  flex-shrink: 3;
+  overflow-y: auto;
+  border-right: 0 !important;
+  border-radius: 15px 0 0 15px !important;
 
   h2 {
     margin: 1rem 0;

@@ -118,6 +118,7 @@ form {
     background: app.$input-focus;
     border: 0;
     @include app.flex();
+    cursor: pointer;
 
     img {
       height: 65%;

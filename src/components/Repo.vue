@@ -2,12 +2,12 @@
   <li>
     <h4>
       <img :src="book" alt="" />
-      <a :href="repo.html_url">{{ repo.name }}</a>
+      <a :href="repo?.html_url">{{ repo?.name }}</a>
     </h4>
-    <p>{{ repo.description }}</p>
+    <p>{{ repo?.description }}</p>
     <div>
       <img :src="star" alt="" />
-      <span>{{ repo.stargazers_count }}</span>
+      <span>{{ repo?.stargazers_count }}</span>
     </div>
   </li>
 </template>

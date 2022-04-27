@@ -21,6 +21,9 @@ $no-info-text: #373b42;
 $error: #ff0c0c;
 $input-focus: #1f6feb;
 $input-focus-placeholder: #6e7681;
+$scrollbar-thumb: #686868;
+$scrollbar-thumb-hover: #5b5b5b;
+$scrollbar-track: #424242;
 
 $main-font: "Helvetica", sans-serif;
 $username-font: "Arial", sans-serif;
@@ -32,6 +35,24 @@ $title-font: "Space Mono", monospace;
   box-sizing: border-box;
   font-family: $main-font;
   list-style-type: none;
+  scrollbar-width: auto;
+  scrollbar-color: #686868 #424242;
+
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $scrollbar-track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb;
+
+    &:hover {
+      background: $scrollbar-thumb-hover;
+    }
+  }
 }
 
 body,
@@ -44,26 +65,17 @@ body,
     height: calc(100vh - 65px);
 
     .infos {
+      gap: 10px;
       height: calc(100% - 35px);
       @include flex(row, space-around);
+      width: min(100%, 1300px);
       .info-section {
         padding: 1rem;
         margin: 30px auto;
         width: min(95%, 600px);
-        max-height: 80%;
+        height: 80%;
         border-radius: 15px;
         border: $border;
-
-        a {
-          color: $cta;
-          text-decoration: none;
-          font-size: inherit;
-        }
-
-        a:hover {
-          text-decoration: underline;
-        }
-
         .no-info {
           color: $no-info-text;
           user-select: none;
@@ -73,6 +85,15 @@ body,
             text-decoration: none;
           }
         }
+      }
+      a {
+        color: $cta;
+        text-decoration: none;
+        font-size: inherit;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
     }
   }

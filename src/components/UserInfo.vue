@@ -1,5 +1,5 @@
 <template>
-  <section v-if="userData" class="info-section">
+  <section v-if="userData" class="info-section user-info">
     <ProfileInfo :userData="userData" />
     <SocialInfo
       :userData="userData"
@@ -23,4 +23,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use "../app.scss";
+.user-info {
+  @include app.flex(column, center, start);
+}
 </style>
