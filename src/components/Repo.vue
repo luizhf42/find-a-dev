@@ -2,7 +2,7 @@
   <li>
     <h4>
       <img :src="book" alt="" />
-      <a :href="repo?.html_url">{{ repo?.name }}</a>
+      <a :href="repo?.html_url" target="_blank">{{ repo?.name }}</a>
     </h4>
     <p>{{ repo?.description }}</p>
     <div>
@@ -35,13 +35,24 @@ li {
   width: 100%;
   border-radius: 6px;
   min-height: 107px;
+  max-height: 117px;
   padding: 1rem;
 
   h4 {
     font-size: 0.875rem;
     @include app.flex(row, start, center);
     gap: 5px;
+    width: 100%;
     height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    a {
+      width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   div {

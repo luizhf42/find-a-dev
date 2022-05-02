@@ -2,30 +2,30 @@
   <div class="social-info">
     <img :src="userGroup" alt="" />
     <p>
-      <span>{{ formatter.format(userData.followers) }}</span>
+      <span>{{ formatter.format(userData?.followers) }}</span>
       followers
     </p>
     ·
     <p>
-      <span>{{ formatter.format(userData.following) }}</span>
+      <span>{{ formatter.format(userData?.following) }}</span>
       following
     </p>
   </div>
 
   <div class="personal-info">
-    <p :class="{ 'no-info': !userData.company }">
-      <img :src="company" alt="" />{{ userData.company || "No info" }}
+    <p :class="{ 'no-info': !userData?.company }">
+      <img :src="company" alt="" />{{ userData?.company || "No info" }}
     </p>
-    <p :class="{ 'no-info': !userData.location }">
-      <img :src="location" alt="" />{{ userData.location || "No info" }}
+    <p :class="{ 'no-info': !userData?.location }">
+      <img :src="location" alt="" />{{ userData?.location || "No info" }}
     </p>
-    <p :class="{ 'no-info': !userData.twitter }">
-      <img :src="twitter" alt="" />{{ userData.twitter || "No info" }}
+    <p :class="{ 'no-info': !userData?.twitter }">
+      <img :src="twitter" alt="" />{{ userData?.twitter || "No info" }}
     </p>
     <p>
       <img :src="link" alt="" />
-      <a :href="website.href" :class="{ 'no-info': !userData.blog }">{{
-        userData.blog || "No info"
+      <a :href="website?.href" :class="{ 'no-info': !userData?.blog }">{{
+        userData?.blog || "No info"
       }}</a>
     </p>
   </div>

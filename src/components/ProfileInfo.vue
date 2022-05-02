@@ -16,7 +16,7 @@
 
   <div class="bio">
     <h2>Bio</h2>
-    <p :class="{ 'no-info': !userData.bio }">{{ userData.bio || "No bio" }}</p>
+    <p :class="{ 'no-info': !userData?.bio }">{{ userData?.bio || "No bio" }}</p>
   </div>
 </template>
 
@@ -69,7 +69,6 @@ export default defineComponent({
 
   p {
     font-size: 1rem;
-    margin-bottom: 1rem;
   }
 }
 

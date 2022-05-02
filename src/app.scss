@@ -74,6 +74,7 @@ body,
         margin: 30px auto;
         width: min(95%, 600px);
         height: 80%;
+        max-height: 450px;
         border-radius: 15px;
         border: $border;
         .no-info {
@@ -108,8 +109,30 @@ body,
 @media screen and (max-height: 600px) {
   #app {
     main {
-      .infos {
+      .infos,
+      .info-section {
         height: auto;
+
+        .info-section {
+          max-height: 500px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #app {
+    main {
+      .infos {
+        @include flex(column);
+        height: auto;
+
+        .repos-section {
+          margin: 0 0 10px 0;
+          border-right: $border !important;
+          border-radius: 15px !important;
+        }
       }
     }
   }
