@@ -9,7 +9,7 @@
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/luiz-henrique-felix">
+          <a href="https://www.linkedin.com/in/luizhf42">
             <i class="devicon-linkedin-plain"></i>
           </a>
         </li>
